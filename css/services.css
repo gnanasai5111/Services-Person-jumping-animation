@@ -1,0 +1,284 @@
+
+.servicesheading {
+  font-size: 1.5rem;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 21px;
+  font-family: sans-serif;
+  line-height: 1;
+  text-transform: uppercase;
+  padding-top: 100px;
+    /* padding-bottom: 1; */
+    display: inline-block;
+}
+
+
+.moving-icon {
+  position: absolute;
+  top: -74%;
+}
+
+.explode.icon-explode {
+  transform: scale(60);
+  opacity: 0;
+  z-index: 7;
+  visibility: visible;
+}
+
+.explode {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  /* height: 8%;
+width: 12%; */
+  border-radius: 50%;
+  background-color: #ffffff;
+  visibility: hidden;
+  opacity: 0.6;
+  z-index: 0;
+  transition: transform 1s ease-in-out, opacity 2s ease-in-out;
+}
+
+.overlay-icon.glow {
+  display: block;
+}
+
+.overlay-icon-border.glow {
+  display: block;
+}
+.bg-circles-container{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: rotatingman 7s infinite;
+  animation-delay: 1.5s;
+  transition: transform 1s ease-in-out;
+  z-index: -1;
+  display: none;
+}
+.bg-circles-container.circleactive{
+  display: block;
+}
+/* .bg-circles {
+  position: relative;
+
+      height: 100%;
+width: 100%;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+} */
+@keyframes rotatingman {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+
+}
+.moving-icon{
+  animation: jumphigh 1s 1;
+  transition: transform 1s ease-in-out;
+}
+@keyframes jumphigh {
+  0%{
+    top:-8vh;
+  }
+  40%{
+  top:-6vh;
+  }
+  60%{
+  top:-8vh;
+  }
+  100%{
+  top:-5vh;
+  }
+}
+.overlay-services{
+  position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+}
+
+
+
+
+
+
+.row {
+  margin: 0;
+}
+.t{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 12%;
+}
+.circle-container{
+  overflow: hidden;
+}
+
+/* .circle {
+  position: relative;
+    height: 800px;
+    width: 100%;
+    margin-left: -50%;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+} */
+.circle{
+  position: relative;
+    height: 800px;
+    width: 100%;
+    max-width: 800px;
+    margin-left: -50%;
+  color: #fff;
+
+}
+
+.circle::before {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border-radius:50%;
+  background:linear-gradient(#00A7CD,#ffffff);
+  -webkit-mask:radial-gradient(farthest-side, transparent calc(100% - 2px),#fff 0);
+}
+
+
+.servicesimage{
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  height: 800px;
+  transition: background-image 1s ease-in-out;
+}
+.servicebox {
+  display: none;
+  width: 50%;
+  color: #ffffff;
+
+  animation: moveservices 3s 1;
+}
+@keyframes moveservices {
+  0%{
+    transform: translateX(-60px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
+
+}
+.servicebox.active{
+  display: block;
+
+
+}
+
+.circle-container {
+  display: flex;
+  justify-content: flex-start;
+
+  transition: margin 2s ease-out;
+}
+
+.one{
+  left: 27%;
+    top: 10%;
+z-index: 3;
+}
+
+.two{
+  left: 42%;
+      top: 45%;
+z-index: 3;
+
+}
+.three{
+  left: 27%;
+    bottom: 10%;
+z-index: 3;
+
+}
+.one, .two, .three {
+  position: absolute;
+  /* height: 55px;
+  width: 55px; */
+  height: 8.315%;
+width: 8%;
+min-height: 66px;
+min-width: 66px;
+  border-radius: 50%;
+  background:linear-gradient(#00FAE0,#00A3CD);
+  /* border: 2px solid #00A7CD; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.svg-img{
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(
+306deg
+) brightness(102%) contrast(100%);
+}
+.overlay-icon{
+
+  width: 178%;
+height: 178%;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 0.4;
+  transform: scale(1);
+  border-radius: 50%;
+  display: none;
+  animation: shrink 1s infinite;
+  transition: transform 2s ease;
+}
+@keyframes shrink {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(0.6);
+  }
+
+}
+.overlay-icon-border{
+  /* width: 90px;
+  height: 90px; */
+  width: 150%;
+height: 150%;
+  position: absolute;
+  border: 2px solid #ffffff;
+  opacity: 0.4;
+  transform: scale(0.7);
+  border-radius: 50%;
+  animation: grow 1s infinite;
+  transition: transform 2s ease;
+  display: none;
+}
+@keyframes grow {
+  from{
+    transform: scale(0.7);
+  }
+  to{
+    transform: scale(1);
+  }
+}
+#ourservice{
+  padding-top: 100px;
+}
+.padding-circle{
+  padding: 0;
+}
